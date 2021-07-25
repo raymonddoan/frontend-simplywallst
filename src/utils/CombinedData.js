@@ -1,14 +1,17 @@
 import importData from "./ImportData";
 
 const combinedData = async () => {
-  const companyData = await importData("/companies").companies
-  const scoreData = await importData("/scores").scores
+  const companyData = await importData("/companies")
+  const companyArray = await companyData.companies
+  
+  const scoreData = await importData("/scores")
+  const scoreArray = await scoreData.scores
 
   const resultsArray = []
 
-  if (companyData.length !== 0 && scoreData.length !== 0) {
-    for (const companyElement of companyData) {
-      for (const scoreElement of scoreData) {
+  if (companyArray.length !== 0 && scoreArray.length !== 0) {
+    for (const companyElement of companyArray) {
+      for (const scoreElement of scoreArray) {
         if (companyElement.score_id === scoreElement.id) {
           let element = {
             id: companyElement.id,
