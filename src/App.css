@@ -1,14 +1,18 @@
 .App {
   text-align: center;
+  background-color: #28354e;
+  color: white;
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: white;
 }
 
+@media screen and (min-width: 1000px)  {
+  .App {
+    height: 100vh;
+  }
+}
