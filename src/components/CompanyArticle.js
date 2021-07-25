@@ -1,9 +1,9 @@
 import React from 'react';
 
 const CompanyArticle = ({company}) => {
-  const {name, unique_symbol} = company
+  const {name, unique_symbol, score} = company
   
-  if ( !name || !unique_symbol ) {
+  if ( !name || !unique_symbol || !score ) {
     return null
   }
 
@@ -12,7 +12,8 @@ const CompanyArticle = ({company}) => {
       <article>
         <div>
           <h1>{name}</h1>
-          <h2>{unique_symbol}</h2>
+          <h3>{unique_symbol}</h3>
+          <p>Overall Snowflake Score: {score}</p>
         </div>
       </article>
     </>
