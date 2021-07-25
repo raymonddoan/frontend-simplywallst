@@ -27,6 +27,7 @@ const combinedData = async () => {
     }
   }
 
+  // console.log(resultsArray)
   return resultsArray
 
 }
