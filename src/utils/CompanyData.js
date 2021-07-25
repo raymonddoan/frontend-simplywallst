@@ -10,7 +10,6 @@ const companyData = async () => {
       console.log("Company Data is loaded");
       return data;
     } catch (error) {
-      // Logs the message when there is an error and rerun API request to retrieve the data.
       if (error) {
         console.log("Retrying to load company data");
         return companyData();        

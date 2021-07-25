@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 
 import companyData from "./utils/CompanyData";
 
+import CompaniesContainer from "./components/CompaniesContainer";
+
 function App() {
   const [companies, setCompanies] = useState(null);
 
@@ -18,11 +20,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <div>
-          {companies && companies.map((company) => 
-            <p>{company.name}</p>
-          )}
-        </div>
+        <CompaniesContainer companies={companies} />
       </header>
     </div>
   );
