@@ -1,9 +1,9 @@
 import React from 'react';
 
 const CompanyArticle = ({company}) => {
-  const {name, unique_symbol} = company
+  const {name, unique_symbol, score_id} = company
   
-  if ( !name || !unique_symbol ) {
+  if ( !name || !unique_symbol || score_id ) {
     return null
   }
 
