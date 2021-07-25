@@ -1,11 +1,12 @@
 import React from 'react';
+import CompanyArticle from './CompanyArticle';
 
 const CompaniesContainer = ({companies}) => {
   
   return (
     <div>
       {companies && companies.map(company => 
-        <p>{company.name}</p>
+        <CompanyArticle company={company} />
       )}
     </div>
   )
