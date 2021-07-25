@@ -20,8 +20,9 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <CompaniesContainer companies={companies} />
+        <h1>Simply Wall St Snowflake Insights</h1>
       </header>
+      {companies && <CompaniesContainer companies={companies} />}
     </div>
   );
 }
