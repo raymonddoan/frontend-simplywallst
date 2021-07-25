@@ -1,26 +1,28 @@
-import './App.css';
-import { useEffect, useState } from 'react';
+import "./App.css";
+import { useEffect, useState } from "react";
 
 import companyData from "./utils/CompanyData";
 
 function App() {
-  const [companies, setCompanies] = useState([])
+  const [companies, setCompanies] = useState(null);
 
   const getCompaniesData = async () => {
     let companiesArray = await companyData();
     setCompanies(companiesArray);
-  }
+  };
 
   useEffect(() => {
-    getCompaniesData()
-  }, [])
+    getCompaniesData();
+  }, []);
 
   return (
     <div className="App">
       <header className="App-header">
-        <p>
-          {companies}
-        </p>
+        <div>
+          {companies && companies.map((company) => 
+            <p>{company.name}</p>
+          )}
+        </div>
       </header>
     </div>
   );
