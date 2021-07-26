@@ -9,11 +9,25 @@ const StyledCompaniesContainer = styled.div`
   align-content: center;
 `
 
-const CompaniesContainer = ({companies}) => {
-  
+const CompaniesContainer = ({companies, sortedField}) => {
+  let sortedCompanies = [...companies];
+
+  if (sortedField !== null) {
+    sortedCompanies.sort((a, b) => {
+      if (a[sortedField] < b[sortedField]) {
+        return 1;
+      }
+      if (a[sortedField] > b[sortedField]) {
+        return -1;
+      }
+      return 0;
+    })
+  }
+
+
   return (
     <StyledCompaniesContainer>
-      {companies && companies.map(company => 
+      {sortedCompanies && sortedCompanies.map(company => 
         <CompanyArticle company={company} key={company.id}/>
       )}
     </StyledCompaniesContainer>
