@@ -13,12 +13,17 @@ const combinedData = async () => {
     for (const companyElement of companyArray) {
       for (const scoreElement of scoreArray) {
         if (companyElement.score_id === scoreElement.id) {
+          const priceData = await importData(`/prices/${companyElement.id}`)
+          const priceArray = await priceData.companyPrices
+
           let element = {
             id: companyElement.id,
             name: companyElement.name,
             unique_symbol: companyElement.unique_symbol,
             exchange: companyElement.exchange_symbol,
-            score: scoreElement.total
+            score: scoreElement.total,
+            firstPrice: priceArray[0].price,
+            lastPrice: priceArray[priceArray.length - 1].price
           }
 
           resultsArray.push(element)
@@ -29,7 +34,6 @@ const combinedData = async () => {
 
   // console.log(resultsArray)
   return resultsArray
-
 }
 
 export default combinedData;
