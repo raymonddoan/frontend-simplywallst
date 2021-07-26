@@ -76,6 +76,7 @@ const CompanyArticle = ({company}) => {
               <StyledTitle>{name}</StyledTitle>
             </StyledTitleDiv>
             <StyledSymbol>{unique_symbol}</StyledSymbol>
+            <StyledSymbol>${lastPrice}</StyledSymbol>
             <p>{volatility}%</p>
           </StyledRightDiv>
         </StyledTextDiv>
