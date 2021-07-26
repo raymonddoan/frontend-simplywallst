@@ -2,11 +2,49 @@ import React from 'react';
 import DropdownFilter from './DropdownFilter';
 import styled from "styled-components";
 
+const StyledNavbar = styled.div`
+  padding: 0 2rem;
+  background-color: #267491;
+  
+  @media (min-width: 700px) {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 2rem;
+  }
+`
+
+const StyledSortDiv = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+
+  @media (min-width: 700px) {
+    width: 500px;
+  }
+`
+
+const StyledButtonDiv = styled.div`
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+
+  @media (min-width: 700px) {
+    width: 150px;
+  }
+`
+
 const StyledFilterDiv = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
+
+  @media (min-width: 700px) {
+    width: 500px;
+  }
 `
 
 const NavBar = (props) => {
@@ -29,18 +67,20 @@ const NavBar = (props) => {
   scores.unshift("")
 
   return (
-    <>
-      <div>
+    <StyledNavbar>
+      <StyledSortDiv>
         <p>Sort by:</p>
-        <button onClick={() => setSortedField("score")}>Score</button>
-        <button onClick={() => setSortedField("volatility")}>Volatility</button>
-      </div>
+        <StyledButtonDiv>
+          <button onClick={() => setSortedField("score")}>Score</button>
+          <button onClick={() => setSortedField("volatility")}>Volatility</button>
+        </StyledButtonDiv>
+      </StyledSortDiv>
       <StyledFilterDiv>
         <p>Filter by: </p>
         <DropdownFilter data={exchanges} setValue={setExchange} label="Exchange"/>
         <DropdownFilter data={scores} setValue={setScore} label="Scores"/>
       </StyledFilterDiv>
-    </>
+    </StyledNavbar>
   )
 }
 

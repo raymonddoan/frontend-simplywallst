@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 const DropdownFilter = (props) => {
   const {data, setValue, label} = props
 
