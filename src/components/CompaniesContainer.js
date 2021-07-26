@@ -10,7 +10,7 @@ const StyledCompaniesContainer = styled.div`
 `
 
 const CompaniesContainer = ({companies}) => {
-  
+
   return (
     <StyledCompaniesContainer>
       {companies && companies.map(company => 

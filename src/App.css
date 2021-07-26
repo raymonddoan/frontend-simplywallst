@@ -11,7 +11,7 @@
   justify-content: center;
 }
 
-@media screen and (min-width: 1000px)  {
+@media screen and (min-width: 800px)  {
   .App {
     height: 100vh;
   }
