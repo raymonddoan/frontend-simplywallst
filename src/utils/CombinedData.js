@@ -23,7 +23,8 @@ const combinedData = async () => {
             exchange: companyElement.exchange_symbol,
             score: scoreElement.total,
             firstPrice: priceArray[0].price,
-            lastPrice: priceArray[priceArray.length - 1].price
+            lastPrice: priceArray[priceArray.length - 1].price,
+            volatility: parseFloat((priceArray[priceArray.length - 1].price - priceArray[0].price) / priceArray[0].price).toFixed(2) 
           }
 
           resultsArray.push(element)

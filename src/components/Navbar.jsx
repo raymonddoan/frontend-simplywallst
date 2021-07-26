@@ -33,6 +33,7 @@ const NavBar = (props) => {
       <div>
         <p>Sort by:</p>
         <button onClick={() => setSortedField("score")}>Score</button>
+        <button onClick={() => setSortedField("volatility")}>Volatility</button>
       </div>
       <StyledFilterDiv>
         <p>Filter by: </p>
