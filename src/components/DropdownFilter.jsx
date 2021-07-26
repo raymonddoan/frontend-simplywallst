@@ -1,7 +1,4 @@
 import React from 'react';
-import styled from "styled-components";
-
-
 
 const DropdownFilter = (props) => {
   const {data, setValue, label} = props

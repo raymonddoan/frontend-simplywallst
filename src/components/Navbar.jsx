@@ -3,13 +3,16 @@ import DropdownFilter from './DropdownFilter';
 import styled from "styled-components";
 
 const StyledNavbar = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  align-items: center;
   padding: 0 2rem;
-  height: 2rem;
   background-color: #267491;
+  
+  @media (min-width: 700px) {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 2rem;
+  }
 `
 
 const StyledSortDiv = styled.div`
@@ -17,13 +20,20 @@ const StyledSortDiv = styled.div`
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
-  width: 30%;
+
+  @media (min-width: 700px) {
+    width: 500px;
+  }
 `
 
 const StyledButtonDiv = styled.div`
   display: flex;
   justify-content: space-between;
-  width: 40%;
+  width: 50%;
+
+  @media (min-width: 700px) {
+    width: 150px;
+  }
 `
 
 const StyledFilterDiv = styled.div`
@@ -31,7 +41,10 @@ const StyledFilterDiv = styled.div`
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  width: 40%;
+
+  @media (min-width: 700px) {
+    width: 500px;
+  }
 `
 
 const NavBar = (props) => {
