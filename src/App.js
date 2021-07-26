@@ -20,11 +20,11 @@ function App() {
 
   let sortedFilteredCompanies = [...companies];
   if (exchange !== null && exchange !== "" && score !== null && score !== "") {
-    sortedFilteredCompanies = companies.filter((company) => company.exchange == exchange && company.score == score)
+    sortedFilteredCompanies = companies.filter((company) => company.exchange === exchange && company.score === parseInt(score))
   } else if (exchange !== null && exchange !== "") {
-    sortedFilteredCompanies = companies.filter((company) => company.exchange == exchange)
+    sortedFilteredCompanies = companies.filter((company) => company.exchange === exchange)
   } else if (score !== null && score !== "") {
-    sortedFilteredCompanies = companies.filter((company) => company.score == score)
+    sortedFilteredCompanies = companies.filter((company) => company.score === parseInt(score))
   }
 
   if (sortedField) {

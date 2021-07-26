@@ -7,7 +7,7 @@ const importData = async (path) => {
     try {
       const response = await SwsApi.get(path);
       const data = await response.data;
-      console.log(`${path} Data is loaded`);
+      // console.log(`${path} Data is loaded`);
       return data;
     } catch (error) {
       if (error) {
