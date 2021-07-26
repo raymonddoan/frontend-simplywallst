@@ -1,9 +1,32 @@
 import React from 'react';
-import DropdownExchange from './DropdownExchange';
+import DropdownFilter from './DropdownFilter';
+import styled from "styled-components";
+
+const StyledFilterDiv = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+`
 
 const NavBar = (props) => {
-  const {setSortedField, companies, filteredField, setFilteredField} = props
+  const {setSortedField, companies, setExchange, setScore} = props
 
+  let exchanges = []
+  for (const company of companies) {
+    if (!exchanges.includes(company.exchange)) {
+      exchanges.push(company.exchange)
+    }
+  }
+  exchanges.unshift("")
+
+  let scores = []
+  for (const company of companies) {
+    if (!scores.includes(company.score)) {
+      scores.push(company.score)
+    }
+  }
+  scores.unshift("")
 
   return (
     <>
@@ -11,7 +34,11 @@ const NavBar = (props) => {
         <p>Sort by:</p>
         <button onClick={() => setSortedField("score")}>Score</button>
       </div>
-      <DropdownExchange companies={companies}/>
+      <StyledFilterDiv>
+        <p>Filter by: </p>
+        <DropdownFilter data={exchanges} setValue={setExchange} label="Exchange"/>
+        <DropdownFilter data={scores} setValue={setScore} label="Scores"/>
+      </StyledFilterDiv>
     </>
   )
 }
