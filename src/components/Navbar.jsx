@@ -1,9 +1,8 @@
 import React from 'react';
-import DropdownExchange from './DropdownExchange';
+import DropdownFilter from './DropdownFilter';
 
 const NavBar = (props) => {
-  const {setSortedField, companies, filteredField, setFilteredField} = props
-
+  const {setSortedField, companies, setExchange, setScore} = props
 
   return (
     <>
@@ -11,7 +10,7 @@ const NavBar = (props) => {
         <p>Sort by:</p>
         <button onClick={() => setSortedField("score")}>Score</button>
       </div>
-      <DropdownExchange companies={companies}/>
+      <DropdownFilter companies={companies} setExchange={setExchange} setScore={setScore}/>
     </>
   )
 }
