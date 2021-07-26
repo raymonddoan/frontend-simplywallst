@@ -2,29 +2,22 @@ import React from 'react';
 
 
 const DropdownFilter = (props) => {
-  const {companies, setExchange, setScore} = props
+  const {data, setValue, label} = props
 
-  let exchanges = []
-  for (const company of companies) {
-    if (!exchanges.includes(company.exchange)) {
-      exchanges.push(company.exchange)
-    }
-  }
-  exchanges.unshift("")
 
-  const handleOnChangeExchange = (e) => {
+  const handleOnChange = (e) => {
     let value = e.target.value;
-    setExchange(value)
+    setValue(value)
   }
   
   return (
     <>
       <div className="filter-options">
         <div className="filter-option">
-          <label>Exchange</label>
-          <select className="exchange" onChange={handleOnChangeExchange}>
-            {exchanges && exchanges.map((exchange) => (
-              <option className="option" key={exchange} value={exchange}>{exchange}</option>
+          <label>{label}: </label>
+          <select className="exchange" onChange={handleOnChange}>
+            {data && data.sort((a, b) => a - b).map((option) => (
+              <option className="option" key={option} value={option}>{option}</option>
             ))}
           </select>
         </div>
