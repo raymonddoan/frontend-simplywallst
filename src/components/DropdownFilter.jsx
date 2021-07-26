@@ -4,7 +4,6 @@ import React from 'react';
 const DropdownFilter = (props) => {
   const {data, setValue, label} = props
 
-
   const handleOnChange = (e) => {
     let value = e.target.value;
     setValue(value)

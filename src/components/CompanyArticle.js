@@ -55,13 +55,11 @@ const StyledSymbol = styled.p`
 
 
 const CompanyArticle = ({company}) => {
-  const {name, unique_symbol, score, firstPrice, lastPrice} = company
+  const {name, unique_symbol, score, lastPrice, volatility} = company
   
-  if ( !name || !unique_symbol || !score || !firstPrice || !lastPrice) {
+  if ( !name || !unique_symbol || !score || !lastPrice || !volatility) {
     return null
   }
-
-  let volatility = parseFloat((lastPrice - firstPrice) / firstPrice).toFixed(2) 
 
   return (
     <>
